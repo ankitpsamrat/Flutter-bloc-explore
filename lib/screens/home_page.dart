@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '/authentication/signin/bloc/signin_bloc.dart';
+import '/authentication/signin/screens/signin_screen.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -16,13 +19,40 @@ class HomePage extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, 'signIn');
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BlocProvider(
+                      create: (context) => SignInBloc(),
+                      child: SignInScreen(),
+                    ),
+                  ),
+                );
+                // Navigator.pushNamed(context, 'singIn', arguments: {
+                //   BlocProvider(
+                //     create: (context) => SignInBloc(),
+                //   ),
+                // });
               },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 30,
+                  vertical: 15,
+                ),
+              ),
               child: Text('Singin with email id'),
             ),
             SizedBox(height: 15),
             ElevatedButton(
               onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 30,
+                  vertical: 15,
+                ),
+              ),
               child: Text('Singin with google'),
             ),
           ],

@@ -1,6 +1,6 @@
-import 'package:bloc_package/authentication/signin/screens/signin_screen.dart';
-import 'package:bloc_package/screens/home_page.dart';
 import 'package:flutter/material.dart';
+import '/authentication/signin/screens/signin_screen.dart';
+import '/screens/home_page.dart';
 
 void main() {
   runApp(const MyApp());
