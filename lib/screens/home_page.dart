@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Form validation using bloc'),
+        title: const Text('Form validation using bloc'),
         elevation: 0,
       ),
       body: Center(
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => BlocProvider(
                       create: (context) => SignInBloc(),
-                      child: SignInScreen(),
+                      child: const SignInScreen(),
                     ),
                   ),
                 );
@@ -36,24 +36,24 @@ class HomePage extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 30,
                   vertical: 15,
                 ),
               ),
-              child: Text('Singin with email id'),
+              child: const Text('Singin with email id'),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   horizontal: 30,
                   vertical: 15,
                 ),
               ),
-              child: Text('Singin with google'),
+              child: const Text('Singin with google'),
             ),
           ],
         ),

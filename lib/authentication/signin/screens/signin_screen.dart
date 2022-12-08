@@ -21,12 +21,12 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SignIn Home'),
+        title: const Text('SignIn Home'),
         elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
               BlocBuilder<SignInBloc, SignInState>(
@@ -34,14 +34,14 @@ class _SignInScreenState extends State<SignInScreen> {
                   if (state is SignInErrorState) {
                     return Text(
                       state.errorMessage,
-                      style: TextStyle(color: Colors.red),
+                      style: const TextStyle(color: Colors.red),
                     );
                   } else {
                     return Container();
                   }
                 },
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               TextField(
                 controller: emailController,
                 onChanged: (value) {
@@ -52,11 +52,11 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   );
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Email',
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextField(
                 controller: passwordController,
                 onChanged: (value) {
@@ -67,15 +67,15 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   );
                 },
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Password',
                 ),
               ),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               BlocBuilder<SignInBloc, SignInState>(
                 builder: (context, state) {
                   if (state is SignInLoadingState) {
-                    return Center(child: CircularProgressIndicator());
+                    return const Center(child: CircularProgressIndicator());
                   }
                   return ElevatedButton(
                     onPressed: () {
@@ -92,12 +92,12 @@ class _SignInScreenState extends State<SignInScreen> {
                       backgroundColor: (state is SignInValidState)
                           ? Colors.blue
                           : Colors.grey,
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                         horizontal: 60,
                         vertical: 18,
                       ),
                     ),
-                    child: Text('Sign In'),
+                    child: const Text('Sign In'),
                   );
                 },
               ),
