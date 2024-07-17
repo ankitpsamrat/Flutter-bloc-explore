@@ -1,7 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '/authentication/signin/bloc/signin_event.dart';
-import '/authentication/signin/bloc/signin_state.dart';
+import 'signin_event.dart';
+import 'signin_state.dart';
 
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
   SignInBloc() : super(SingInInitialState()) {
