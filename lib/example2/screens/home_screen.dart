@@ -1,9 +1,9 @@
-import 'package:bloc_package/example2/counter/bloc/counter_bloc.dart';
+import 'package:bloc_package/example2/bloc/counter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class CounterDemo extends StatelessWidget {
+  const CounterDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Counter app'),
+        title: const Text('Counter Demo'),
       ),
       body: Center(
         child: BlocBuilder<CounterBloc, CounterState>(

@@ -1,7 +1,5 @@
-import 'package:bloc_package/example2/counter/bloc/counter_bloc.dart';
-import 'package:bloc_package/example2/screens/home_screen.dart';
+import 'package:bloc_package/using_equatable/screens/home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +10,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
 
       // for example 1
@@ -22,11 +20,14 @@ class MyApp extends StatelessWidget {
       //   'signIn': (context) => const SignInScreen(),
       // },
 
-      // for other
-      home: BlocProvider<CounterBloc>(
-        create: (context) => CounterBloc(),
-        child: const HomeScreen(),
-      ),
+      // for counter
+      // home: BlocProvider<CounterBloc>(
+      //   create: (context) => CounterBloc(),
+      //   child: const HomeScreen(),
+      // ),
+
+      // example 3
+      home: EquatableDemo(),
     );
   }
 }
