@@ -1,5 +1,8 @@
-import 'package:bloc_package/using_equatable/screens/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:bloc_package/using_equatable/bloc/counter_bloc.dart';
+import 'package:bloc_package/using_equatable/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,8 +13,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Bloc Explore',
 
       // for example 1
       // initialRoute: 'home',
@@ -20,14 +24,17 @@ class MyApp extends StatelessWidget {
       //   'signIn': (context) => const SignInScreen(),
       // },
 
-      // for counter
+      // for example 2
       // home: BlocProvider<CounterBloc>(
       //   create: (context) => CounterBloc(),
-      //   child: const HomeScreen(),
+      //   child: const CounterDemo(),
       // ),
 
-      // example 3
-      home: EquatableDemo(),
+      // for equatable example
+      home: BlocProvider(
+        create: (context) => CounterBloc(),
+        child: const EquatableDemo(),
+      ),
     );
   }
 }
