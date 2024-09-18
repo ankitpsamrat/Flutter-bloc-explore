@@ -1,4 +1,6 @@
+import 'package:bloc_package/switch_example/bloc/switch_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SwitchHomeScreen extends StatelessWidget {
   const SwitchHomeScreen({super.key});
@@ -19,9 +21,15 @@ class SwitchHomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text('Notifications'),
-                Switch(
-                  value: true,
-                  onChanged: (value) {},
+                BlocBuilder<SwitchBloc, SwitchState>(
+                  builder: (context, state) {
+                    return Switch(
+                      value: state.isSwitch,
+                      onChanged: (value) {
+                        context.read<SwitchBloc>().add(EnableOrDisableEvent());
+                      },
+                    );
+                  },
                 ),
               ],
             ),

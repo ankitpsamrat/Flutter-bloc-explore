@@ -1,5 +1,7 @@
+import 'package:bloc_package/switch_example/bloc/switch_bloc.dart';
 import 'package:bloc_package/switch_example/screens/switch_home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,7 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Bloc Explore',
 
@@ -33,12 +35,11 @@ class MyApp extends StatelessWidget {
       //   child: const EquatableDemo(),
       // ),
 
-      // for multi state example
-      // home: BlocProvider(
-      //   create: (context) => CounterBloc(),
-      //   child: const EquatableDemo(),
-      // ),
-      home: SwitchHomeScreen(),
+      // for switch example
+      home: BlocProvider(
+        create: (context) => SwitchBloc(),
+        child: const SwitchHomeScreen(),
+      ),
     );
   }
 }
