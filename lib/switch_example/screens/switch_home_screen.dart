@@ -14,35 +14,49 @@ class SwitchHomeScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: BlocBuilder<SwitchBloc, SwitchState>(
+          builder: (context, state) {
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text('Notifications'),
-                BlocBuilder<SwitchBloc, SwitchState>(
-                  builder: (context, state) {
-                    return Switch(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text('Notifications'),
+                    // BlocBuilder<SwitchBloc, SwitchState>(
+                    //   builder: (context, state) {
+                    //     return
+
+                    Switch(
                       value: state.isSwitch,
                       onChanged: (value) {
                         context.read<SwitchBloc>().add(EnableOrDisableEvent());
                       },
-                    );
+                      // );
+                      // },
+                    ),
+                  ],
+                ),
+                Container(
+                  height: 200,
+                  margin: const EdgeInsets.symmetric(vertical: 30),
+                  color: Colors.red.withOpacity(state.slider),
+                ),
+                // BlocBuilder<SwitchBloc, SwitchState>(
+                //   builder: (context, state) {
+                //     return
+
+                Slider(
+                  value: state.slider,
+                  onChanged: (value) {
+                    context.read<SwitchBloc>().add(SliderEvent(slider: value));
                   },
+                  //   );
+                  // },
                 ),
               ],
-            ),
-            Container(
-              height: 200,
-              margin: const EdgeInsets.symmetric(vertical: 30),
-              color: Colors.red.withOpacity(0.2),
-            ),
-            Slider(
-              value: 0.4,
-              onChanged: (value) {},
-            ),
-          ],
+            );
+          },
         ),
       ),
     );
