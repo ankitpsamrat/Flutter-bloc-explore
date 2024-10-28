@@ -14,49 +14,51 @@ class SwitchHomeScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: BlocBuilder<SwitchBloc, SwitchState>(
-          builder: (context, state) {
-            return Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text('Notifications'),
-                    // BlocBuilder<SwitchBloc, SwitchState>(
-                    //   builder: (context, state) {
-                    //     return
-
-                    Switch(
+                const Text('Notifications'),
+                BlocBuilder<SwitchBloc, SwitchState>(
+                  buildWhen: (previous, current) {
+                    return previous.isSwitch != current.isSwitch;
+                  },
+                  builder: (context, state) {
+                    return Switch(
                       value: state.isSwitch,
                       onChanged: (value) {
                         context.read<SwitchBloc>().add(EnableOrDisableEvent());
                       },
-                      // );
-                      // },
-                    ),
-                  ],
+                    );
+                  },
                 ),
-                Container(
+              ],
+            ),
+            BlocBuilder<SwitchBloc, SwitchState>(
+              builder: (context, state) {
+                return Container(
                   height: 200,
                   margin: const EdgeInsets.symmetric(vertical: 30),
                   color: Colors.red.withOpacity(state.slider),
-                ),
-                // BlocBuilder<SwitchBloc, SwitchState>(
-                //   builder: (context, state) {
-                //     return
-
-                Slider(
+                );
+              },
+            ),
+            BlocBuilder<SwitchBloc, SwitchState>(
+              buildWhen: (previous, current) {
+                return previous.slider != current.slider;
+              },
+              builder: (context, state) {
+                return Slider(
                   value: state.slider,
                   onChanged: (value) {
                     context.read<SwitchBloc>().add(SliderEvent(slider: value));
                   },
-                  //   );
-                  // },
-                ),
-              ],
-            );
-          },
+                );
+              },
+            ),
+          ],
         ),
       ),
     );
