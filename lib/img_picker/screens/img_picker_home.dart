@@ -5,6 +5,27 @@ class ImgPickerHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Image Picker Demo'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 140,
+              width: 140,
+              color: Colors.amber,
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {},
+              child: const Text('Pick image'),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
