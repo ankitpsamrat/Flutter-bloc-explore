@@ -1,4 +1,4 @@
-package com.example.flutter_bloc_explore
+package com.example.explore_bloc
 
 import io.flutter.embedding.android.FlutterActivity
 

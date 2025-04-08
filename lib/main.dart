@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:bloc_package/img_picker/screens/img_picker_home.dart';
 import 'package:bloc_package/switch_example/bloc/switch_bloc.dart';
+import 'switch_example/screens/switch_home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,16 +36,16 @@ class MyApp extends StatelessWidget {
       // ),
 
       // for switch example
-      // home: BlocProvider(
-      //   create: (context) => SwitchBloc(),
-      //   child: const SwitchHomeScreen(),
-      // ),
-
-      // for switch example
       home: BlocProvider(
         create: (context) => SwitchBloc(),
-        child: const ImgPickerHome(),
+        child: const SwitchHomeScreen(),
       ),
+
+      // for switch example
+      // home: BlocProvider(
+      //   create: (context) => SwitchBloc(),
+      //   child: const ImgPickerHome(),
+      // ),
     );
   }
 }
