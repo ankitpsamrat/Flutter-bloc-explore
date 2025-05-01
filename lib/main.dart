@@ -1,7 +1,7 @@
+import 'package:bloc_package/changeName/bloc/name_bloc.dart';
+import 'package:bloc_package/changeName/screens/change_name.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bloc_package/switch_example/bloc/switch_bloc.dart';
-import 'switch_example/screens/switch_home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,37 +15,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Bloc Explore',
-
-      // for example 1
-      // initialRoute: 'home',
-      // routes: {
-      //   'home': (context) => const HomePage(),
-      //   'signIn': (context) => const SignInScreen(),
-      // },
-
-      // for example 2
-      // home: BlocProvider<CounterBloc>(
-      //   create: (context) => CounterBloc(),
-      //   child: const CounterDemo(),
-      // ),
-
-      // // for equatable example
-      // home: BlocProvider(
-      //   create: (context) => CounterBloc(),
-      //   child: const EquatableDemo(),
-      // ),
-
-      // for switch example
-      home: BlocProvider(
-        create: (context) => SwitchBloc(),
-        child: const SwitchHomeScreen(),
+      home: MultiBlocProvider(
+        providers: [
+          // BlocProvider(create: (context) => CounterBloc()), // normal method
+          // BlocProvider(create: (context) => CounterBloc()), // equatable method
+          // BlocProvider(create: (context) => SwitchBloc()),
+          // BlocProvider(create: (context) => ImgPickerBloc()),
+          // BlocProvider(create: (context) => SignInBloc()),
+          BlocProvider(create: (context) => NameBloc()),
+        ],
+        // child: const CounterDemo(),
+        // child: const EquatableDemo(),
+        // child: const SwitchHomeScreen(),
+        // child: const ImgPickerHome(),
+        // child: SignInScreen(),
+        child: ChangeName(),
       ),
-
-      // for switch example
-      // home: BlocProvider(
-      //   create: (context) => SwitchBloc(),
-      //   child: const ImgPickerHome(),
-      // ),
     );
   }
 }
