@@ -15,13 +15,17 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
   }
 
   void onCounterIncrease(
-      CounterIncreaseEvent event, Emitter<CounterState> emit) {
+    CounterIncreaseEvent event,
+    Emitter<CounterState> emit,
+  ) {
     counter = counter + 1;
     emit(CounterUpdateState(counter: counter));
   }
 
   void onCounterDecrease(
-      CounterDecreaseEvent event, Emitter<CounterState> emit) {
+    CounterDecreaseEvent event,
+    Emitter<CounterState> emit,
+  ) {
     counter = counter - 1;
     emit(CounterUpdateState(counter: counter));
   }

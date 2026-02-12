@@ -6,9 +6,7 @@ class ImgPickerState extends Equatable {
   const ImgPickerState({this.file});
 
   ImgPickerState copyWith({XFile? file}) {
-    return ImgPickerState(
-      file: file ?? this.file,
-    );
+    return ImgPickerState(file: file ?? this.file);
   }
 
   @override

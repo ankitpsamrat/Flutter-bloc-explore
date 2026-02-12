@@ -20,10 +20,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('SignIn Home'),
-        elevation: 0,
-      ),
+      appBar: AppBar(title: const Text('SignIn Home'), elevation: 0),
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -52,9 +49,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   );
                 },
-                decoration: const InputDecoration(
-                  hintText: 'Email',
-                ),
+                decoration: const InputDecoration(hintText: 'Email'),
               ),
               const SizedBox(height: 10),
               TextField(
@@ -67,9 +62,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   );
                 },
-                decoration: const InputDecoration(
-                  hintText: 'Password',
-                ),
+                decoration: const InputDecoration(hintText: 'Password'),
               ),
               const SizedBox(height: 25),
               BlocBuilder<SignInBloc, SignInState>(

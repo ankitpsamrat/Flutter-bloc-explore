@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:bloc_package/switch_example/bloc/switch_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,10 +10,7 @@ class SwitchHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Switch Demo'),
-      ),
+      appBar: AppBar(centerTitle: true, title: const Text('Switch Demo')),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(

@@ -10,9 +10,7 @@ class ChangeName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Change Name'),
-      ),
+      appBar: AppBar(title: const Text('Change Name')),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

@@ -8,10 +8,7 @@ class EquatableDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Equatable Demo'),
-      ),
+      appBar: AppBar(centerTitle: true, title: const Text('Equatable Demo')),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

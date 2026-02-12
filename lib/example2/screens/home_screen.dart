@@ -10,10 +10,7 @@ class CounterDemo extends StatelessWidget {
     final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
 
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Counter Demo'),
-      ),
+      appBar: AppBar(centerTitle: true, title: const Text('Counter Demo')),
       body: Center(
         child: BlocBuilder<CounterBloc, CounterState>(
           builder: (context, state) {
