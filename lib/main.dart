@@ -1,5 +1,5 @@
-import 'package:bloc_package/changeName/bloc/name_bloc.dart';
-import 'package:bloc_package/changeName/screens/change_name.dart';
+import 'package:bloc_package/internet_check/bloc/internet_bloc.dart';
+import 'package:bloc_package/internet_check/screens/internet_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,14 +22,16 @@ class MyApp extends StatelessWidget {
           // BlocProvider(create: (context) => SwitchBloc()),
           // BlocProvider(create: (context) => ImgPickerBloc()),
           // BlocProvider(create: (context) => SignInBloc()),
-          BlocProvider(create: (context) => NameBloc()),
+          // BlocProvider(create: (context) => NameBloc()),
+          BlocProvider(create: (context) => InternetBloc()),
         ],
         // child: const CounterDemo(),
         // child: const EquatableDemo(),
         // child: const SwitchHomeScreen(),
         // child: const ImgPickerHome(),
         // child: SignInScreen(),
-        child: ChangeName(),
+        // child: ChangeName(),
+        child: const InternetScreen(),
       ),
     );
   }
